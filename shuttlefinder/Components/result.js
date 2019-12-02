@@ -79,16 +79,12 @@ export default class Result extends Component {
           }
           else{
             var num = Number(t1.toString().slice(0,2));
-            if(num>23){
-              num = num-24
-              var t2 = '0'+num.toString()+':'+t1.toString().slice(2)+' AM';
+            if(num < 12 || num == 24){
+              var t2 = num.toString()+':'+t1.toString().slice(2)+' AM';
             }
-            else if (num>12){
+            else  (num>12){
               num = num-12
               var t2 = num.toString()+':'+t1.toString().slice(2)+' PM';
-            }
-            else{
-              var t2 = num.toString()+':'+t1.toString().slice(2)+' AM';
             }
           }
           DATA.push({
